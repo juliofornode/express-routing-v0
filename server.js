@@ -50,7 +50,7 @@ movieRouter.route('/:id')
     })
     .put(function(req, res) {
         Movie.findById(req.params.id, function(err, movie) {
-            movie.actor = req.body.title;
+            movie.title = req.body.title;
             movie.actor = req.body.actor;
             movie.save(function(err, movie) {
                 if(err) res.send(err);
